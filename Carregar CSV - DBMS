@@ -1,0 +1,7 @@
+//Carregar CSV
+LOAD CSV WITH HEADERS FROM 'file:///servidores.csv' AS linha
+FIELDTERMINATOR ';'
+WITH linha
+WHERE linha.matricula IS NOT NULL AND linha.matricula <> ''
+MERGE (p:Pessoa {matricula: linha.matricula})
+SET p.nome = linha.nome, p.genero = linha.genero, p.cargo = linha.cargo;
