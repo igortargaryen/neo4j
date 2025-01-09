@@ -19,4 +19,4 @@ faz.
 uso livre.
 
 ## Contato
-(igor.vasconcellos@outlook.com.br)[mailto:igor.vasconcellos@outlook.com.br]
+[Igor Augusto](mailto:igor.vasconcellos@outlook.com.br)
