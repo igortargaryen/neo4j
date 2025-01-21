@@ -1,0 +1,8 @@
+# Na consulta abaixo é possível perceber a determinação de um node e seu atributo como procura.
+# O Comando Call chama o atributo plot (enredo) e emprega nele as incorporações.
+MATCH (m:Movie {title: 'Toy Story'})
+
+CALL db.index.vector.queryNodes('moviePlots', 6, m.plotEmbedding)
+YIELD node, score
+
+RETURN node.title, node.plot, score
