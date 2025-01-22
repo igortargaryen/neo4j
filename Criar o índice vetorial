@@ -1,0 +1,15 @@
+CREATE VECTOR INDEX questions IF NOT EXISTS
+FOR (q:Question)
+ON q.embedding
+OPTIONS {indexConfig: {
+ `vector.dimensions`: 1536,
+ `vector.similarity_function`: 'cosine'
+}}
+
+// CREATE VECTOR INDEX espera os seguintes parâmetros:
+index_name - O nome do índice
+LabelName - O rótulo do nó no qual indexar
+propertyName - A propriedade na qual indexar
+OPTIONS - As opções para o índice, onde você pode especificar:
+vector.dimensions - A dimensão da incorporação, por exemplo, incorporações OpenAI, consiste em dimensões.1536
+vector.similarity_function - A função de similaridade a ser usada ao comparar valores neste índice - pode ser ou .euclideancosine
